@@ -1,16 +1,18 @@
 <template>
 <div>
-    <!-- <div>
-        <ul v-for="(movie, index) in movies" :key="index"><li><h2>{{movie.title}}</h2></li></ul>
-    </div> -->
+    <MovieRow :movies="movies"/>
 </div>
 </template>
 <script>
 
 import {movies} from '../services/movies.js'
+import MovieRow from '../components/MovieRow.vue'
 
 export default {
     name: 'AppMovies',
+    components: {
+        MovieRow
+    },
     data() {
         return {
             movies: []
