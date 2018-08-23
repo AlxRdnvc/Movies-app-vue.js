@@ -1,8 +1,11 @@
 <template>
 <div>
     <MovieSearch @searchMovies="search"/>
+    <p>Number of selected movies: {{ selectedMovies.length }}</p>
     <p v-if="filteredMovies.length === 0">Movie you looking for is not on the list...</p>
-    <MovieRow :movies="filteredMovies"/><br>
+    <MovieRow v-for="movie in filteredMovies" :key="movie.id" 
+    :movie="movie" @selectedMovie="selected"/>
+
 </div>
 </template>
 <script>
@@ -21,7 +24,8 @@ export default {
     data() {
         return {
             movies: [],
-            title: ''
+            title: '',
+            selectedMovies: []
         }
     },
 
@@ -35,6 +39,9 @@ export default {
     methods: {
         search(title){
             this.title = title
+        },
+        selected(movie){
+            this.selectedMovies.push(movie)
         }
     },
 
