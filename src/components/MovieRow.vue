@@ -1,7 +1,7 @@
 <template>
-    <div>
+    <div class="container">
         <ul class="list-group" v-for="(movie, index) in movies" :key="index">
-            <li class="list-group-item list-group-item-primary">title: <h2>{{movie.title}}</h2></li>
+            <li class="list-group-item list-group-item-primary"><h2 style="text-align:center;">{{movie.title}}</h2></li>
             <li class="list-group-item list-group-item-secondary">director: <p>{{movie.director}}</p></li>
             <li class="list-group-item list-group-item-secondary">img: <p>{{movie.imageUrl}}</p></li>
             <li class="list-group-item list-group-item-secondary">year: <p>{{movie.releaseDate}}</p></li>
