@@ -1,6 +1,7 @@
 <template>
 <div>
     <MovieSearch @searchMovies="search"/>
+    <p v-if="filteredMovies.length === 0">Movie you looking for is not on the list...</p>
     <MovieRow :movies="filteredMovies"/><br>
 </div>
 </template>
