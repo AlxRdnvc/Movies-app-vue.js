@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <div :class="{'selectedBackground': isSelected }">
-            <ul class="list-group {'selectedBackground': isSelected}">
+            <ul class="list-group">
                 <li class="list-group-item list-group-item-primary"><h2 style="text-align:center;">{{movie.title}}</h2></li>
                 <li class="list-group-item list-group-item-secondary">director: <p>{{movie.director}}</p></li>
                 <li class="list-group-item list-group-item-secondary">img: <p>{{movie.imageUrl}}</p></li>

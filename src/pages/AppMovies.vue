@@ -5,6 +5,8 @@
     <p v-if="filteredMovies.length === 0">Movie you looking for is not on the list...</p>
     <MovieRow v-for="movie in filteredMovies" :key="movie.id" 
     :movie="movie" @selectedMovie="selected"/>
+    <button class="btn btn-warning"  @click="selectAll">Select All</button>
+    <button class="btn btn-warning" @click="deselectAll">Deselect All</button>
 
 </div>
 </template>
@@ -42,6 +44,14 @@ export default {
         },
         selected(movie){
             this.selectedMovies.push(movie)
+        },
+
+        selectAll(){
+            this.selectedMovies = this.movies.map(movie => movie.id)
+        },
+
+        deselectAll(){
+            this.selectedMovies = []
         }
     },
 
