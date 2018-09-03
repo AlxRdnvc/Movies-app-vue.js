@@ -44,8 +44,10 @@ export default {
     methods: {
         addNewMovie(){
            movies.add(this.newMovie)
-           .then(response => {this.$router.push('/movies')})
-           .catch(err => console.log(this.errors = err.response.data.errors))
+           .then(() => {this.$router.push('/movies')})
+           .catch((error) => {
+                this.errors = error.response.data.error
+            })
         }
     }
 }
